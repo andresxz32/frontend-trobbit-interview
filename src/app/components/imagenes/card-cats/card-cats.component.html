@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>{{name}}</mat-card-title>
-    <mat-card-subtitle>{{race}}</mat-card-subtitle>
+    <mat-card-title>ID: {{name | titlecase}}</mat-card-title>
+    <mat-card-subtitle>{{race | titlecase}}</mat-card-subtitle>
   </mat-card-header>
   <img lazyLoad width="100%" height="150px" [src]="img" alt="Image of Cat">
   <mat-card-content>

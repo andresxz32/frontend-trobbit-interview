@@ -7,7 +7,7 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, Subject, takeUntil, tap } from 'rxjs';
 import { ImagenesService } from '../../imagenes/imagenes.service';
 import { GatosService } from '../gatos.service';
@@ -29,7 +29,7 @@ export class FormularioGatoComponent implements OnInit {
     private _activeRoute: ActivatedRoute,
     private _gatoService: GatosService,
     private _imgService: ImagenesService,
-    private _changeDetectorRef: ChangeDetectorRef
+    private _changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -44,10 +44,19 @@ export class FormularioGatoComponent implements OnInit {
   }
 
   create(): void {
+    if (this.catFormGroup.invalid) {
+      console.log('form invalid');
+      return;
+    }
     this.createCat.emit(this.catFormGroup.value);
+    this.catFormGroup.reset();
   }
 
   update(): void {
+    if (this.catFormGroup.invalid) {
+      console.log('form invalid');
+      return;
+    }
     this.updateCat.emit({ id: this.id, form: this.catFormGroup.value });
   }
 

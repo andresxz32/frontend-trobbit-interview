@@ -138,16 +138,28 @@ body {
 }
 
 .mat-card-header{
-  background-color:#33b8ff !important;
+  background-color:#86cbf1 !important;
   padding:5px !important;
+  color: white;
+  font-size: large;
+  font-weight: 900;
+  mat-card-subtitle{
+    color: white;
+    font-weight: 100;
+  }
 }
 
  .mat-card{
-  background-color:#33b8ff !important;
+  background-color:#86cbf1 !important;
+  color: white;
+  img{
+    border-radius: 10px;
+  }
 }
 
 .mat-card-content{
-  background-color:#33b8ff !important;
+  background-color:#86cbf1 !important;
+  color: white;
 }
 
 .mat-button{

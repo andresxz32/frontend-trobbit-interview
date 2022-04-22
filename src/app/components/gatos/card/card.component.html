@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-header color="primary">
-    <mat-card-title>{{name}}</mat-card-title>
-    <mat-card-subtitle>{{race}}</mat-card-subtitle>
-    <mat-card-subtitle>{{age}}</mat-card-subtitle>
+    <mat-card-title>{{name | titlecase }}</mat-card-title>
+    <mat-card-subtitle>{{race | titlecase}}</mat-card-subtitle>
+    <mat-card-subtitle>{{age }}</mat-card-subtitle>
   </mat-card-header>
   <img lazyLoad width="200px" height="150px" [src]="img" alt="Image of Cat">
   <mat-card-content>
@@ -13,6 +13,6 @@
   <mat-card-actions class="container-actions">
     <button [routerLink]="['/gatos/form']" [queryParams]="{query: id}" mat-button color="primary">Editar</button>
     <button appPreventDoubleClick (throttledClick)="delete()" [throttleTime]="2000" mat-button
-      color="primary">Eliminar</button>
+      color="accent">Eliminar</button>
   </mat-card-actions>
 </mat-card>

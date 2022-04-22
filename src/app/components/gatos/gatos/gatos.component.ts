@@ -28,8 +28,6 @@ export class GatosComponent implements OnInit {
     this._changeDetectorRef.markForCheck();
   }
 
-  create(): void {}
-
   delete(id: string): void {
     this._gatoService.removeCat(id).subscribe(
       (_) => {
@@ -39,7 +37,7 @@ export class GatosComponent implements OnInit {
     );
   }
 
-  getCats() {
+  getCats(): void {
     this._gatoService.getCats().subscribe(
       (res) => {
         this.cats = res;
