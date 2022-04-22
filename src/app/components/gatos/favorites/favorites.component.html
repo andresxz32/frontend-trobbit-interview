@@ -1,0 +1,11 @@
+<span>Da click en las imagenes para seleccionar</span>
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="container-viewport">
+  <div class="grid-responsive">
+    <div *cdkVirtualFor="let cat of catsFavorites">
+      <div (click)="setPhoto(cat?.image?.url)">
+        <img  lazyLoad width="100%" height="200px" [src]="cat?.image?.url" alt="Image of Cat">
+      </div>
+
+    </div>
+  </div>
+</cdk-virtual-scroll-viewport>

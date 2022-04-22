@@ -1,0 +1,9 @@
+<div class="container-create">
+  <section class="section-form">
+    <formulario-gato (createCat)="createCat($event)" (updateCat)="updateCat($event)"></formulario-gato>
+  </section>
+
+  <section class="section-favorites">
+    <favorites [catsFavorites]="catsFavorites"></favorites>
+  </section>
+</div>

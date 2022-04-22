@@ -1,1 +1,21 @@
-<p>gatos works!</p>
+<div class="container-button">
+  <a [routerLink]="['/gatos/form']" mat-flat-button color="primary">
+    <mat-icon>add</mat-icon>
+    Crear
+  </a>
+</div>
+<ng-container *ngIf="cats.length > 0;else emptyCats">
+  <div class="container-cards">
+    <ng-container *ngFor="let cat of cats">
+      <card (deleteCat)="delete($event)" [name]="cat.nombre" [race]="cat.raza" [img]="cat.foto" [id]="cat._id"
+        [age]="cat.edad"></card>
+    </ng-container>
+  </div>
+</ng-container>
+
+
+<ng-template #emptyCats>
+  <div class="container-empty">
+    <h1>Todavía no has creado tú hermoso y lindo gatito</h1>
+  </div>
+</ng-template>

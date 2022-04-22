@@ -1,0 +1,27 @@
+<form class="form" [formGroup]="catFormGroup">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre">
+    <mat-error>El campo nombre es requerido</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Raza</mat-label>
+    <input placeholder="Raza" matInput formControlName="raza">
+    <mat-error>El campo raza es requerido</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Edad</mat-label>
+    <input type="number" matInput formControlName="edad">
+    <mat-error>El campo edad es requerido</mat-error>
+  </mat-form-field>
+  <div class="container-img" *ngIf="catFormGroup.get('foto').value">
+    <img lazyLoad width="200px" height="200px" [src]="catFormGroup.get('foto').value" alt="Image of Cat">
+  </div>
+  <div class="container-buttons">
+    <button *ngIf="!id" type="button" appPreventDoubleClick (throttledClick)="create()" [throttleTime]="2000"
+      mat-flat-button color="primary">Guardar</button>
+    <button *ngIf="id" type="button" appPreventDoubleClick (throttledClick)="update()" [throttleTime]="2000"
+      mat-flat-button color="primary">Actualizar</button>
+    <a mat-flat-button [routerLink]="['../']" color="primary">Cancelar</a>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+
+
+.form{
+  padding: 20px;
+  .mat-form-field{
+    display:inline-block;
+    width: 100%;
+  }
+  .container-buttons{
+    display: flex;
+    justify-content: center;
+    button{
+      margin-right: 6px;
+    }
+  }
+  .container-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px;
+    img{
+      border-radius: 50%;
+    }
+  }
+}
+
+
+

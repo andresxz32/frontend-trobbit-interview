@@ -5,6 +5,7 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ImageCat } from 'src/app/core/entities/imageCat.model';
 import { ImagenesService } from '../imagenes.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { ImagenesService } from '../imagenes.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImagenesComponent implements OnInit {
-  public cats: any[] = [];
+  public cats: ImageCat[] = [];
   constructor(
     private _activeRoute: ActivatedRoute,
     private _changeDetectorRef: ChangeDetectorRef,

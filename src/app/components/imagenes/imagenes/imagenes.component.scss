@@ -1,6 +1,7 @@
 .container-cards{
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(5, auto [col-start]);
-  column-gap: 10px;
-  row-gap: 10px;
+  gap: 1rem;
+  grid-auto-rows: 20rem;
+  grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
 }

@@ -1,0 +1,20 @@
+
+
+.container-viewport {
+  height: 1000px;
+  width: 700px;
+  .grid-responsive{
+    padding: 10px;
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 12rem;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    img{
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
