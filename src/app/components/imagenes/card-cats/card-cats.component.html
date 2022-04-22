@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{name}}</mat-card-title>
+    <mat-card-subtitle>{{race}}</mat-card-subtitle>
+  </mat-card-header>
+  <img lazyLoad width="100%" height="150px" [src]="img" alt="Image of Cat">
+  <mat-card-content>
+    <p>
+      El gato más bonito del mundo
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button appPreventDoubleClick (throttledClick)="like()" [throttleTime]="2000" mat-button color="accent">Me
+      gusta</button>
+    <button appPreventDoubleClick (throttledClick)="shared()" [throttleTime]="2000" mat-button
+      color="accent">Compartir</button>
+  </mat-card-actions>
+</mat-card>

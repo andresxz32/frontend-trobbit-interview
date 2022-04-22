@@ -1,0 +1,5 @@
+<div class="container-cards">
+  <ng-container *ngFor="let cat of cats">
+    <card-cats (likeMe)="like($event)" [id]="cat.id" [name]="cat.id" [img]="cat.url" [race]="'Raza'"></card-cats>
+  </ng-container>
+</div>
